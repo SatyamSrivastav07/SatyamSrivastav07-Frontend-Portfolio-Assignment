@@ -999,7 +999,7 @@ body {
         flex-direction: column;
     }
     
-    /* .footer-column {
+    .footer-column {
         flex: 1 1 100%;
         min-width: unset;
     }
@@ -1008,4 +1008,4 @@ body {
         flex: 1 1 calc(50% - 15px);
         min-width: 100px;
     }
-} */
+}
