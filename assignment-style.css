@@ -168,96 +168,58 @@ body {
 .shape.rectangle-1 {
     width: 22.6px;
     height: 21.83px;
-    top: 60px;
-    left: 40px;
+    top: 303px;        /* vertical position */
+    left: 5vw;         /* horizontal position relative to viewport */
     transform: rotate(114.8deg);
     border: 2px solid #0047FFCC;
     background: transparent;
     position: absolute;
 }
+
 .shape.rectangle-2 {
     width: 22.6px;
     height: 21.83px;
     top: 477px;
-    left: 477px;
+    left: 40vw;        /* instead of 477px */
     transform: rotate(114.8deg);
     border: 2px solid #0047FFCC;
     background: transparent;
     position: absolute;
 }
+
 .shape.rectangle-3 {
     width: 22.6px;
     height: 21.83px;
     top: 222px;
-    left: 1309px;
+    left: 75vw;        /* responsive horizontal position */
     transform: rotate(-24.8deg);
     border: 2px solid #FFB400CC;
     background: transparent;
     position: absolute;
 }
+
 .shape.ellipse-1 {
     width: 22.83px;
     height: 21.58px;
     top: 160px;
-    left: 80px;
+    left: 8vw;
     border: 2px solid #FFB400CC;
     background: transparent;
     border-radius: 50%;
     position: absolute;
 }
-.shape.ellipse-2 {
-    width: 22.83px;
-    height: 21.58px;
-    top: 552px;
-    left: 875px;
-    border: 2px solid #FFB400CC;
-    background: transparent;
-    border-radius: 50%;
-    position: absolute;
-}
-.shape.ellipse-3 {
-    width: 22.83px;
-    height: 21.58px;
-    top: 204px;
-    left: 877px;
-    border: 2px solid #05FF00CC;
-    background: transparent;
-    border-radius: 50%;
-    position: absolute;
-}
-.shape.ellipse-4 {
-    width: 22.83px;
-    height: 21.58px;
-    top: 580px;
-    left: 128px;
-    border: 2px solid #05FF00CC;
-    background: transparent;
-    border-radius: 50%;
-    position: absolute;
-}
+
 .shape.triangle {
-      position: absolute;
-      top: 528px;
-      left: 1314px;
-      width: 0;
-      height: 0;
-      border-left: 11px solid transparent;  /* half of 22.83 */
-      border-right: 11px solid transparent;
-      border-bottom: 21px solid red; /* height */
-      opacity: 1;
-      transform: rotate(0deg);
-    }
-.shape.triangle::after {
-      content: "";
-      position: absolute;
-      top: 2px;  /* border-width */
-      left: -9px;
-      width: 0;
-      height: 0;
-      border-left: 9px solid transparent;
-      border-right: 9px solid transparent;
-      border-bottom: 17px solid white; /* inner cutout for outline */
-    }
+    position: absolute;
+    top: 528px;
+    left: 90vw;       /* stays inside viewport */
+    width: 0;
+    height: 0;
+    border-left: 11px solid transparent;
+    border-right: 11px solid transparent;
+    border-bottom: 21px solid red;
+}
+
 /* Projects Section */
 .projects {
     padding: 30px 0;
