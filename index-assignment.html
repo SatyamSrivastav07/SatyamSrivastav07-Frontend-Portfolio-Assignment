@@ -1,0 +1,464 @@
+<!-- /**
+Author: Satyam Srivastav
+Date: 31/08/2025
+Project: Frontend Developer Assignment
+
+Features and optimisations added apart from usual design:
+-> Mobile Responsive
+-> Cross Browser Compatible
+-> Modal for Hire Me Button
+-> Esc support to close modal
+-> Smooth Scroll for Navigation Links in Navbar
+-> Keyboard Navigation for Testimonials Carousel
+-> Auto Navigation for Testimonials Carousel by 5 seconds and button navigation
+-> Stop auto navigation on mouse hover on testimonials carousel for better user experience
+-> Basic form validation
+-> Basic Accessibility support
+-> Basic Animations
+-> Removed hero background below 1024px since it was creating good visual experience below that
+-> Did not do any image optimization since images are local and not from any external source
+-> Good JS and CSS practises
+-> Auto highlight navlinks on scroll once scrolled to that section with throttling to improve performance
+*/ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Satyam Srivastav - Frontend Developer</title>
+    
+    <!-- Google Fonts - Open Sans as required -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="assignment-style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" role="banner">
+        <div class="container">
+            <div class="nav">
+                <div class="logo">
+                    <img src="images/logo.png" alt="Logo" class="logo-icon">
+                </div>
+                <nav class="navigation" role="navigation" aria-label="Main navigation">
+                    <a href="#home" class="nav-link active" aria-current="page">Home</a>
+                    <a href="#skills" class="nav-link">Skills</a>
+                    <a href="#education" class="nav-link">Education</a>
+                    <a href="#projects" class="nav-link">Projects</a>
+                    <a href="#recommendations" class="nav-link">Recommendations</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home" aria-labelledby="hero-heading">
+        <div class="container">
+            <!-- <div class="shape rectangle-1"></div>
+            <div class="shape rectangle-2"></div>
+            <div class="shape rectangle-3"></div>
+            <div class="shape ellipse-1"></div>
+            <div class="shape ellipse-2"></div>
+            <div class="shape ellipse-3"></div>
+            <div class="shape ellipse-4"></div>
+            <div class="shape triangle"></div> -->
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title" id="hero-heading">
+                        <span class="name">I'm Satyam Srivastav</span>
+                        <span class="hero-subtitle">Front-end <span>Developer</span> </span>
+                        
+                    </h1>
+                    <p class="hero-description">
+                        Laser-focused on building delightful, performant UIs. I craft semantic markup, modern CSS, and accessible interactions—without heavy frameworks.
+                    </p>
+                    <button class="hire-btn" aria-haspopup="dialog" aria-describedby="hire-btn-desc">
+                        <span>HIRE ME</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#2B2B2B">
+  <polygon points="11.293 4.707 17.586 11 4 11 4 13 17.586 13 11.293 19.293 12.707 20.707 21.414 12 12.707 3.293 11.293 4.707"/>
+</svg>
+                        <!-- <img src="images/arrow.svg" alt="right-arrow"> -->
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects" aria-labelledby="projects-heading">
+        <div class="container">
+            <h2 class="section-title" id="projects-heading">Projects</h2>
+            <p class="section-subtitle">Selected case studies demonstrating UI engineering craft.</p>
+            
+            <div class="projects-grid" role="list">
+                <div class="project-card" role="listitem">
+                    <img src="images/project 1.jpg" alt="Project 1 - How To Make Flyer Design">
+                    <div class="project-content">
+                        <h3>How To Make Flyer Design</h3>
+                        <p>Short teaser copy about the project outlining scope and outcomes.</p>
+                        <div class="project-tags">
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">React</span>
+                            <span class="tag">Node.js</span>
+                            <span class="tag">March 20</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card" role="listitem">
+                    <img src="images/project 2.jpg" alt="Project 2 - How To Make Flyer Design">
+                    <div class="project-content">
+                        <h3>How To Make Flyer Design</h3>
+                        <p>Short teaser copy about the project outlining scope and outcomes.</p>
+                        <div class="project-tags">
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">React</span>
+                            <span class="tag">Node.js</span>
+                            <span class="tag">March 20</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card" role="listitem">
+                    <img src="images/project 3.jpg" alt="Project 3 - How To Make Flyer Design">
+                    <div class="project-content">
+                        <h3>How To Make Flyer Design</h3>
+                        <p>Short teaser copy about the project outlining scope and outcomes.</p>
+                        <div class="project-tags">
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">React</span>
+                            <span class="tag">Node.js</span>
+                            <span class="tag">March 20</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card" role="listitem">
+                    <img src="images/project 4.jpg" alt="Project 4 - How To Make Flyer Design">
+                    <div class="project-content">
+                        <h3>How To Make Flyer Design</h3>
+                        <p>Short teaser copy about the project outlining scope and outcomes.</p>
+                        <div class="project-tags">
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">React</span>
+                            <span class="tag">Node.js</span>
+                            <span class="tag">March 20</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card" role="listitem">
+                    <img src="images/project 1.jpg" alt="Project 5 - How To Make Flyer Design">
+                    <div class="project-content">
+                        <h3>How To Make Flyer Design</h3>
+                        <p>Short teaser copy about the project outlining scope and outcomes.</p>
+                        <div class="project-tags">
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">React</span>
+                            <span class="tag">Node.js</span>
+                            <span class="tag">March 20</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card" role="listitem">
+                    <img src="images/project 6.jpg" alt="Project 6 - How To Make Flyer Design">
+                    <div class="project-content">
+                        <h3>How To Make Flyer Design</h3>
+                        <p>Short teaser copy about the project outlining scope and outcomes.</p>
+                        <div class="project-tags">
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">March 20</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recommendations Section -->
+    <section class="recommendations" id="recommendations" aria-labelledby="recommendations-heading">
+        <div class="container">
+            <h2 class="section-title" id="recommendations-heading">Recommendations</h2>
+            <p class="section-subtitle">Testimonials carousel with keyboard and button controls.</p>
+            
+            <div class="carousel-container" role="region" aria-label="Customer testimonials">
+                <button class="carousel-btn prev-btn" aria-label="Previous testimonial">‹</button>
+                <div class="carousel">
+                    <div class="carousel-track" id="carouselTrack">
+                        <div class="testimonial-card active" role="tabpanel" aria-label="Testimonial 1 of 6">
+                            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+                            <h3>Great Quality!</h3>
+                            <p>"Rayan shipped a pixel‑perfect UI and proactively handled accessibility edge cases."</p>
+                            <div class="testimonial-author">
+                                <img src="images/review 1.jpg" alt="James Gosse" class="author-avatar">
+                                <div class="author-info">
+                                    <strong>James Gosse</strong>
+                                    <span>Developer</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="testimonial-card" role="tabpanel" aria-label="Testimonial 2 of 6">
+                            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+                            <h3>Amazing Work</h3>
+                            <p>"Delivered ahead of schedule with clean, maintainable code. Zero regressions."</p>
+                            <div class="testimonial-author">
+                                <img src="images/review 2.jpg" alt="Tina Philips" class="author-avatar">
+                                <div class="author-info">
+                                    <strong>Tina Philips</strong>
+                                    <span>PM</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="testimonial-card" role="tabpanel" aria-label="Testimonial 3 of 6">
+                            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+                            <h3>Consistent Excellence</h3>
+                            <p>"Great collaboration and thorough cross‑browser testing across Chrome, Firefox, and Safari."</p>
+                            <div class="testimonial-author">
+                                <img src="images/review 3.jpg" alt="Talen Watswarth" class="author-avatar">
+                                <div class="author-info">
+                                    <strong>Talen Watswarth</strong>
+                                    <span>Business Man</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="testimonial-card" role="tabpanel" aria-label="Testimonial 4 of 6">
+                            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+                            <h3>Highly Recommend</h3>
+                            <p>"A11y‑first approach with delightful micro‑interactions that respect reduced motion."</p>
+                            <div class="testimonial-author">
+                                <img src="images/review 1.jpg" alt="Alex Green" class="author-avatar">
+                                <div class="author-info">
+                                    <strong>Alex Green</strong>
+                                    <span>Designer</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="testimonial-card" role="tabpanel" aria-label="Testimonial 5 of 6">
+                            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+                            <h3>Outstanding Results</h3>
+                            <p>"Professional communication and delivered exactly what was promised. Will work again!"</p>
+                            <div class="testimonial-author">
+                                <img src="images/review 2.jpg" alt="Mike Johnson" class="author-avatar">
+                                <div class="author-info">
+                                    <strong>Mike Johnson</strong>
+                                    <span>CTO</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="testimonial-card" role="tabpanel" aria-label="Testimonial 6 of 6">
+                            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+                            <h3>Exceptional Work</h3>
+                            <p>"Clean code, great documentation, and responsive to feedback. Highly professional."</p>
+                            <div class="testimonial-author">
+                                <img src="images/review 3.jpg" alt="Sarah Kim" class="author-avatar">
+                                <div class="author-info">
+                                    <strong>Sarah Kim</strong>
+                                    <span>Product Owner</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-btn next-btn" aria-label="Next testimonial">›</button>
+            </div>
+            
+            <div class="carousel-dots" id="carouselDots" role="tablist" aria-label="Choose testimonial">
+                <span class="dot active" data-slide="1" role="tab" aria-controls="carouselTrack" aria-selected="true" tabindex="0" aria-label="Go to testimonial 1"></span>
+                <span class="dot" data-slide="2" role="tab" aria-controls="carouselTrack" aria-selected="false" tabindex="-1" aria-label="Go to testimonial 2"></span>
+                <span class="dot" data-slide="3" role="tab" aria-controls="carouselTrack" aria-selected="false" tabindex="-1" aria-label="Go to testimonial 3"></span>
+                <span class="dot" data-slide="4" role="tab" aria-controls="carouselTrack" aria-selected="false" tabindex="-1" aria-label="Go to testimonial 4"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-form-section">
+                    <h2 class="contact-section-title" id="contact-heading">Leave ME Your Info</h2>
+                    <div class="contact-form">
+                        <form aria-labelledby="contact-heading" novalidate>
+                            <div class="form-group">
+                                <label for="name">Your Full Name (Required)</label>
+                                <input type="text" id="name" name="name" autocomplete="name" required aria-required="true">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Your Email (Required)</label>
+                                <input type="email" id="email" name="email" autocomplete="email" required aria-required="true">
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" name="subject" autocomplete="off">
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Your Message</label>
+                                <textarea id="message" name="message" rows="5"></textarea>
+                            </div>
+                            <button type="submit" class="send-btn">SEND MESSAGE</button>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="contact-info-section">
+                    <h2 class="contact-section-title">Contact Information</h2>
+                    <div class="contact-info">
+                        <div class="info-card">
+                        <div class="info-icon">🏠</div>
+                        <div class="info-details">
+                            <p><strong>Country:</strong> Bangladesh</p>
+                            <p><strong>City:</strong> Dhaka</p>
+                            <p><strong>Street:</strong> 35 Vhatera, Badda</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-icon">📧</div>
+                        <div class="info-details">
+                            <p><strong>Email:</strong> youremail@gmail.com</p>
+                            <p><strong>Skype:</strong> @yourusername</p>
+                            <p><strong>Telegram:</strong> @yourusername</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-icon">📞</div>
+                        <div class="info-details">
+                            <p><strong>Support Services:</strong> 15369</p>
+                            <p><strong>Office:</strong> +58 (021)356 587 235</p>
+                            <p><strong>Personal:</strong> +58 (021)356 587 235</p>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Partners Section -->
+    <section class="brand-partners">
+        <div class="container">
+            <div class="brands-grid">
+                <div class="brand-logo">
+                    <img src="images/brand 1.png" alt="3 Generate" />
+                </div>
+                <div class="brand-logo">
+                    <img src="images/brand 2.png" alt="GL" />
+                </div>
+                <div class="brand-logo">
+                    <img src="images/brand 3.png" alt="Generate" />
+                </div>
+                <div class="brand-logo">
+                    <img src="images/brand 4.png" alt="Generate" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <img src="images/logo.png" alt="Logo" class="logo-icon">
+                        <span></span>
+                    </div>
+                    <div class="footer-rating">
+                        <img src="images/sutoe.jpg" alt="Guru" class="rating-icon">
+                        <span>4.8/5 Rating On Guru</span>
+                    </div>
+                    <div class="footer-rating">
+                        <img src="images/n.jpg" alt="Freelancer" class="rating-icon">
+                        <span>9/10 Rating On Freelancer</span>
+                    </div>
+                    <div class="footer-rating">
+                       <span><img src="images/unnnpuis.jpg" alt="Upwork" class="rating-icon"></span> 
+                        <span>4.9/5 Rating On Upwork</span>
+                    </div>
+                </div>
+                <div class="footer-column-collection">
+                    <div class="footer-column">
+                        <h4>Quick Links</h4>
+                        <ul role="list">
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#skills">Skills</a></li>
+                            <li><a href="#education">Education</a></li>
+                            <li><a href="#projects">Projects</a></li>
+                            <li><a href="#recommendations">Recommendations</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Portfolio</h4>
+                        <ul role="list">
+                            <li>Frontend Development</li>
+                            <li>Backend Development</li>
+                            <li>Website Design</li>
+                            <li>Machine Learning</li>
+                            <li>Problem Solving & DSA</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Connect</h4>
+                        <div class="social-links" role="list">
+                            <a href="#" class="social-link" aria-label="Connect on LinkedIn">
+                                <img src="images/linkedin.png" alt="LinkedIn" class="social-icon">
+                            </a>
+                            <a href="#" class="social-link" aria-label="Follow on Instagram">
+                                <img src="images/insta.png" alt="Instagram" class="social-icon">
+                            </a>
+                            <a href="#" class="social-link" aria-label="Like on Facebook">
+                                <img src="images/fb.png" alt="Facebook" class="social-icon">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Copyright, All Right Reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div class="modal" id="hireModal" role="dialog" aria-labelledby="modal-title" aria-hidden="true" aria-modal="true">
+        <div class="modal-content" role="document">
+            <div class="modal-header">
+                <h2 id="modal-title">Let's work together</h2>
+                <span class="close" aria-label="Close modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p>Drop your details in the form below and I'll get back within 24 hours.</p>
+                <button class="contact-form-btn" aria-describedby="modal-body-text">Go to contact form</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="assignment-script.js"></script>
+</body>
+</html>
